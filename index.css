@@ -1,26 +1,118 @@
-/* start styles */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=VT323&display=swap');
 
+html {
+	height: 100%;
+}
+
 body {
-  margin: 0;
-  background: #444;
-  font-family: "Poppins";
+	background: #444;
+	font-family: 'Poppins';
+	height: 100%;
 }
-li, ul {
-  list-style-type: none;
-  padding: 0;
+
+li,
+ul {
+	list-style-type: none;
+	padding: 0;
 }
+
 main {
-  padding: 140px 40px 40px;
-  color: #bbb;
+	padding: 140px 40px 40px;
+	color: #bbb;
 }
 
-/* solution styles */
+main p {
+	margin: 5px 0;
+}
 
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
 
+h1 {
+	color: #eee;
+}
 
-/* open state */
+header {
+	width: 100%;
+	background-color: #333;
+	display: flex;
+	padding: 30px;
+	justify-content: space-between;
+}
 
+.menu {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+}
 
+.burger {
+	margin: auto 0;
+	z-index: 1;
+	position: relative;
+	cursor: pointer;
+}
 
-/* transitions */
+.burger span {
+	display: block;
+	width: 30px;
+	height: 2px;
+	background-color: #eee;
+	margin: 6px 0;
+	transition: all ease-in 0.3s;
+}
+
+nav {
+	position: absolute;
+	top: 0;
+	width: 200px;
+	height: 100%;
+	background-color: #222;
+	padding-left: 30px;
+	left: -200px;
+	transition: left ease-in 0.3s;
+}
+
+nav ul {
+	margin-top: 100px;
+}
+nav ul li {
+	margin: 10px 0;
+}
+
+nav a,
+nav a:visited {
+	font-size: 1.3rem;
+	color: #eee;
+}
+
+nav a:hover,
+nav a:active {
+	font-size: 1.3rem;
+	color: #aaa;
+}
+
+/* transitions and transformations*/
+
+.burger.cross span:nth-child(1) {
+	transform: translateY(4px) rotate(45deg);
+}
+
+.burger.cross span:nth-child(2) {
+	opacity: 0;
+	width: 0;
+	height: 0;
+	margin: 0;
+}
+
+.burger.cross span:nth-child(3) {
+	transform: translateY(-4px) rotate(-45deg);
+}
+
+nav.show {
+	left: 0;
+}
